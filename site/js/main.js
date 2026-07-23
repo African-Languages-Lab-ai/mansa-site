@@ -76,21 +76,81 @@
   /* --- Supported Languages: interactive globe --- */
   var globeStage = document.getElementById("globe-stage");
   if (globeStage) {
+    // One-line profile shown when a language is tapped (or hovered on desktop).
+    var langInfo = {
+      amharic:       ["Amharic", "The official working language of Ethiopia, written in the Ge'ez script."],
+      ewe:           ["Ewe", "Spoken across southeastern Ghana and southern Togo."],
+      tsonga:        ["Tsonga", "An official language of South Africa, also spoken in Mozambique."],
+      bemba:         ["Bemba", "The most widely spoken indigenous language in Zambia."],
+      tswana:        ["Tswana", "A national language of Botswana and an official language of South Africa."],
+      arabic:        ["Arabic", "Spoken across North Africa and the Middle East, and written right to left."],
+      twi:           ["Twi", "A widely spoken Akan variety used across much of Ghana."],
+      yoruba:        ["Yoruba", "Spoken by tens of millions across southwestern Nigeria, Benin and Togo."],
+      oromo:         ["Oromo", "Ethiopia's most widely spoken first language, from the Cushitic family."],
+      bambara:       ["Bambara", "The most widely spoken language in Mali, used widely as a lingua franca."],
+      sepedi:        ["Sepedi", "Also known as Northern Sotho, one of South Africa's official languages."],
+      hausa:         ["Hausa", "A major trade language across northern Nigeria, Niger and the Sahel."],
+      "ndebele-south": ["Ndebele (South)", "An official language of South Africa, part of the Nguni group."],
+      chichewa:      ["Chichewa", "The national language of Malawi, also spoken in Zambia and Mozambique."],
+      sesotho:       ["Sesotho", "An official language of both Lesotho and South Africa."],
+      igbo:          ["Igbo", "Spoken across southeastern Nigeria by tens of millions of people."],
+      tigrinya:      ["Tigrinya", "Spoken in Eritrea and northern Ethiopia, written in the Ge'ez script."],
+      zulu:          ["Zulu", "South Africa's most widely spoken home language, part of the Nguni group."],
+      swati:         ["Swati", "An official language of Eswatini and of South Africa."],
+      kikongo:       ["Kikongo", "Spoken along the Congo River in the DRC, Congo and Angola."],
+      xhosa:         ["Xhosa", "An Nguni language of South Africa, well known for its click consonants."],
+      kinyarwanda:   ["Kinyarwanda", "The national language of Rwanda, spoken by nearly the whole population."],
+      luganda:       ["Luganda", "The most widely spoken indigenous language in Uganda."],
+      kirundi:       ["Kirundi", "The national language of Burundi, closely related to Kinyarwanda."],
+      swahili:       ["Swahili", "A lingua franca for East Africa, spoken by over 100 million people."],
+      afrikaans:     ["Afrikaans", "A West Germanic language spoken in South Africa and Namibia."],
+      somali:        ["Somali", "The official language of Somalia, also spoken in Ethiopia, Kenya and Djibouti."],
+      shona:         ["Shona", "The most widely spoken language in Zimbabwe."],
+      lingala:       ["Lingala", "A trade language spoken along the Congo River in the DRC and Congo."]
+    };
+
+    var descEl = document.getElementById("lang-desc");
+    var descName = document.getElementById("lang-desc-name");
+    var descText = document.getElementById("lang-desc-text");
+    var descHint = descText ? descText.textContent : "";
+
+    var renderDesc = function (lang) {
+      if (!descEl) return;
+      var info = lang && langInfo[lang];
+      if (info) {
+        descName.textContent = info[0];
+        descText.textContent = info[1];
+        descEl.classList.add("has-lang");
+      } else {
+        descName.textContent = "";
+        descText.textContent = descHint;
+        descEl.classList.remove("has-lang");
+      }
+    };
+
+    var pinnedLang = null;
     var setActive = function (lang) {
       globeStage.classList.toggle("has-active", !!lang);
       globeStage.querySelectorAll("[data-lang]").forEach(function (el) {
         el.classList.toggle("is-active", lang && el.getAttribute("data-lang") === lang);
       });
+      renderDesc(lang);
     };
+
     globeStage.querySelectorAll(".lang-item, .lang-line, .lang-dot-svg").forEach(function (el) {
       var lang = el.getAttribute("data-lang");
       el.addEventListener("mouseenter", function () { setActive(lang); });
       el.addEventListener("focus", function () { setActive(lang); });
     });
-    globeStage.addEventListener("mouseleave", function () { setActive(null); });
+    // Leaving the globe falls back to whatever was last tapped, not to nothing.
+    globeStage.addEventListener("mouseleave", function () { setActive(pinnedLang); });
     globeStage.querySelectorAll(".lang-item").forEach(function (btn) {
-      btn.addEventListener("blur", function () { setActive(null); });
-      btn.addEventListener("click", function () { setActive(btn.getAttribute("data-lang")); });
+      btn.addEventListener("blur", function () { setActive(pinnedLang); });
+      btn.addEventListener("click", function () {
+        var lang = btn.getAttribute("data-lang");
+        pinnedLang = (pinnedLang === lang) ? null : lang;
+        setActive(pinnedLang);
+      });
     });
   }
 

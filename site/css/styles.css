@@ -2468,3 +2468,31 @@ button { font: inherit; }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
 }
+
+/* ----- Supported Languages: tapped-language description ----- */
+.lang-desc {
+  max-width: 640px;
+  margin: 26px auto 0;
+  padding: 0 24px;
+  text-align: center;
+  font-size: clamp(15px, 1.6vw, 17px);
+  line-height: 1.55;
+  color: var(--ink-soft);
+  min-height: 2.6em;
+  transition: color .25s var(--ease);
+}
+.lang-desc-name {
+  font-weight: 700;
+  color: var(--maroon);
+}
+.lang-desc-name:not(:empty) { margin-right: 8px; }
+.lang-desc-name:not(:empty)::after {
+  content: "—";
+  margin-left: 8px;
+  color: var(--ink-soft);
+  font-weight: 400;
+}
+.lang-desc:not(.has-lang) .lang-desc-text {
+  opacity: .62;
+  font-style: italic;
+}
