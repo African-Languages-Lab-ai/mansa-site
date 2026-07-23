@@ -2469,30 +2469,42 @@ button { font: inherit; }
   .reveal { opacity: 1; transform: none; transition: none; }
 }
 
-/* ----- Supported Languages: tapped-language description ----- */
+/* ----- Supported Languages: tapped-language card, floating over the globe ----- */
 .lang-desc {
-  max-width: 640px;
-  margin: 26px auto 0;
-  padding: 0 24px;
+  position: absolute;
+  left: 50.6%;                 /* centre of the globe within the stage */
+  top: 47.8%;
+  z-index: 3;
+  width: clamp(190px, 42%, 330px);
+  padding: 15px 18px;
+  border-radius: 16px;
   text-align: center;
-  font-size: clamp(15px, 1.6vw, 17px);
-  line-height: 1.55;
-  color: var(--ink-soft);
-  min-height: 2.6em;
-  transition: color .25s var(--ease);
+  background: rgba(255, 252, 245, 0.78);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+          backdrop-filter: blur(12px) saturate(150%);
+  border: 1px solid rgba(92, 26, 14, 0.14);
+  box-shadow: 0 20px 44px -20px rgba(41, 18, 10, 0.55);
+  pointer-events: none;        /* never blocks the labels/dots underneath */
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -50%) scale(.94);
+  transition: opacity .25s var(--ease), transform .25s var(--ease), visibility .25s;
+}
+.lang-desc.has-lang {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
 }
 .lang-desc-name {
+  display: block;
   font-weight: 700;
+  font-size: clamp(14px, 1.4vw, 16px);
   color: var(--maroon);
+  margin-bottom: 5px;
 }
-.lang-desc-name:not(:empty) { margin-right: 8px; }
-.lang-desc-name:not(:empty)::after {
-  content: "—";
-  margin-left: 8px;
+.lang-desc-text {
+  display: block;
+  font-size: clamp(12px, 1.15vw, 13.5px);
+  line-height: 1.45;
   color: var(--ink-soft);
-  font-weight: 400;
-}
-.lang-desc:not(.has-lang) .lang-desc-text {
-  opacity: .62;
-  font-style: italic;
 }
