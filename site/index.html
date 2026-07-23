@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mansa — by African Languages Lab</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" aria-label="Mansa home">
+        <img src="images/logo.png" alt="Mansa — by African Languages Lab" />
+      </a>
+
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li class="has-mega">
+            <button class="nav-link nav-product" aria-expanded="false" aria-controls="mega-product" aria-haspopup="true">
+              Product
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+
+            <div class="mega" id="mega-product">
+              <div class="mega-inner">
+                <a class="product-card" href="mansa-agent.html">
+                  <img src="images/mansa-agent.png" alt="Mansa Agent" />
+                  <span class="sr-only">Mansa Agent</span>
+                </a>
+                <a class="product-card" href="mansa-ai.html">
+                  <img src="images/mansa-ai.png" alt="Mansa AI" />
+                  <span class="sr-only">Mansa AI</span>
+                </a>
+                <a class="product-card" href="mansa-transcribe.html">
+                  <img src="images/mansa-transcribe.png" alt="Mansa Transcribe" />
+                  <span class="sr-only">Mansa Transcribe</span>
+                </a>
+                <a class="product-card" href="mansa-translate.html">
+                  <img src="images/mansa-translate.png" alt="Mansa Translate" />
+                  <span class="sr-only">Mansa Translate</span>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <li><a class="nav-link" href="pricing.html">Pricing</a></li>
+
+          <li class="nav-cta-item">
+            <a class="btn-primary" href="get-started.html">Get started</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <h1 class="hero-title">The AI built for<br />African languages.</h1>
+          <p class="hero-sub">Chat, translate, transcribe, and work across African languages with AI designed to understand the continent</p>
+
+          <form class="hero-prompt" action="get-started.html" method="get" role="search">
+            <input class="hero-input" type="text" name="q" placeholder="How can I help you today?" aria-label="Ask Mansa a question" />
+            <button class="hero-ask" type="submit">
+              Ask Mansa
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="12" y1="19" x2="12" y2="5"></line>
+                <polyline points="6 11 12 5 18 11"></polyline>
+              </svg>
+            </button>
+          </form>
+
+          <div class="hero-chips">
+            <a class="chip" href="mansa-transcribe.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path>
+                <path d="m15 5 4 4"></path>
+              </svg>
+              Transcribe
+            </a>
+            <a class="chip" href="mansa-translate.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="8" y1="13" x2="16" y2="13"></line>
+                <line x1="8" y1="17" x2="16" y2="17"></line>
+              </svg>
+              Translate
+            </a>
+            <a class="chip" href="mansa-agent.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+              Agent
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-stage">
+            <img class="stage-bg" src="images/hero-bg.png" alt="" aria-hidden="true" data-parallax="0.12" data-parallax-scale="1.12" />
+            <img class="stage-phone" src="images/hero-phone.png" alt="" aria-hidden="true" />
+            <img class="stage-agent" src="images/hero-agent.png" alt="Mansa Agent app screen" />
+            <img class="stage-translate" src="images/hero-translate.png" alt="Translate from language picker" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Logo ticker ===== -->
+    <section class="ticker" aria-label="Organizations that trust Mansa">
+      <p class="ticker-title">30+ organizations trust Mansa</p>
+      <div class="ticker-viewport">
+        <div class="ticker-track">
+          <div class="ticker-group">
+            <img src="images/logo-phrase.png" alt="Phrase" />
+            <img src="images/logo-blackbird.png" alt="Blackbird.io" />
+            <img src="images/logo-african.png" alt="African Languages Lab" />
+            <img src="images/logo-phrase.png" alt="Phrase" />
+            <img src="images/logo-blackbird.png" alt="Blackbird.io" />
+            <img src="images/logo-african.png" alt="African Languages Lab" />
+            <img src="images/logo-phrase.png" alt="Phrase" />
+            <img src="images/logo-blackbird.png" alt="Blackbird.io" />
+            <img src="images/logo-african.png" alt="African Languages Lab" />
+            <img src="images/logo-phrase.png" alt="Phrase" />
+            <img src="images/logo-blackbird.png" alt="Blackbird.io" />
+            <img src="images/logo-african.png" alt="African Languages Lab" />
+          </div>
+          <div class="ticker-group" aria-hidden="true">
+            <img src="images/logo-phrase.png" alt="" />
+            <img src="images/logo-blackbird.png" alt="" />
+            <img src="images/logo-african.png" alt="" />
+            <img src="images/logo-phrase.png" alt="" />
+            <img src="images/logo-blackbird.png" alt="" />
+            <img src="images/logo-african.png" alt="" />
+            <img src="images/logo-phrase.png" alt="" />
+            <img src="images/logo-blackbird.png" alt="" />
+            <img src="images/logo-african.png" alt="" />
+            <img src="images/logo-phrase.png" alt="" />
+            <img src="images/logo-blackbird.png" alt="" />
+            <img src="images/logo-african.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Products ===== -->
+    <section class="products">
+      <div class="products-panel">
+        <div class="products-head">
+          <span class="products-badge">
+            <img class="badge-ico badge-ico-dark" src="images/accordion-icon.png" alt="" aria-hidden="true">
+            Products
+          </span>
+          <h2 class="products-title">Everything you need to work across African languages</h2>
+          <p class="products-sub">Mansa provides the AI infrastructure designed specifically for Africa.</p>
+        </div>
+
+        <div class="products-body">
+          <div class="accordion">
+            <div class="acc-item">
+              <button class="acc-header" aria-expanded="false">
+                <span class="acc-title">Mansa Agent</span>
+                <span class="acc-icon" aria-hidden="true"></span>
+              </button>
+              <div class="acc-panel">
+                <div class="acc-panel-inner">
+                  <p class="acc-desc">An AI agent that connects your email, calendar, and everyday tools to get real work done across African languages.</p>
+                  <a class="acc-more" href="mansa-agent.html">Learn more
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="acc-item is-open">
+              <button class="acc-header" aria-expanded="true">
+                <span class="acc-title">Mansa AI</span>
+                <span class="acc-icon" aria-hidden="true"></span>
+              </button>
+              <div class="acc-panel">
+                <div class="acc-panel-inner">
+                  <p class="acc-desc">Your everyday AI assistant for learning, writing, brainstorming, coding, and answering questions in African languages.</p>
+                  <a class="acc-more" href="mansa-ai.html">Learn more
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="acc-item">
+              <button class="acc-header" aria-expanded="false">
+                <span class="acc-title">Mansa Translate</span>
+                <span class="acc-icon" aria-hidden="true"></span>
+              </button>
+              <div class="acc-panel">
+                <div class="acc-panel-inner">
+                  <p class="acc-desc">Fast, accurate translation across African languages and beyond, built to preserve meaning, tone, and nuance.</p>
+                  <a class="acc-more" href="mansa-translate.html">Learn more
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="acc-item">
+              <button class="acc-header" aria-expanded="false">
+                <span class="acc-title">Mansa Transcribe</span>
+                <span class="acc-icon" aria-hidden="true"></span>
+              </button>
+              <div class="acc-panel">
+                <div class="acc-panel-inner">
+                  <p class="acc-desc">Turn speech into clean, accurate text across African languages, dialects, and accents.</p>
+                  <a class="acc-more" href="mansa-transcribe.html">Learn more
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="acc-item">
+              <button class="acc-header" aria-expanded="false">
+                <span class="acc-title">Mansa ASR</span>
+                <span class="acc-icon" aria-hidden="true"></span>
+              </button>
+              <div class="acc-panel">
+                <div class="acc-panel-inner">
+                  <p class="acc-desc">Speech recognition tuned for African languages, powering voice interfaces and real-time captioning.</p>
+                  <a class="acc-more" href="#">Learn more
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="products-visual">
+            <img src="images/products-visual.png" alt="Mansa app on an African landscape" data-parallax="0.12" data-parallax-scale="1.15" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta">
+      <img class="cta-bg-img" src="images/cta-bg.png" alt="" aria-hidden="true" data-parallax="0.15" data-parallax-scale="1.1" />
+      <div class="cta-inner">
+        <h2 class="cta-title">Your AI partner in thinking for Africa.</h2>
+        <div class="cta-actions">
+          <span class="cta-label">Download the app</span>
+          <a class="cta-btn" href="#">App Store</a>
+          <a class="cta-btn" href="#">Play Store</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Why Mansa ===== -->
+    <section class="why-mansa">
+      <div class="why-mansa-inner">
+        <div class="section-head">
+          <span class="badge-chip">
+            <img src="images/accordion-icon.png" alt="" aria-hidden="true">
+            Why Mansa
+          </span>
+          <h2 class="section-title">Mansa is built to understand African languages</h2>
+          <p class="section-sub">Mansa, developed by <strong>the African Languages Lab</strong>, natively understands African languages, dialects, and cultural contexts, unlike most AI models that treat them as an afterthought.</p>
+        </div>
+
+        <div class="why-cards">
+          <div class="why-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+              <circle cx="8.5" cy="12" r="2"></circle>
+              <path d="M13.5 10h5M13.5 14h3.5"></path>
+            </svg>
+            <h3>Trained for Africa</h3>
+            <p>Built using billions of African language tokens collected through ethical, community-driven research.</p>
+          </div>
+          <div class="why-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="4.5" y="10.5" width="15" height="10" rx="2"></rect>
+              <path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"></path>
+            </svg>
+            <h3>Cultural Understanding</h3>
+            <p>Understands meaning, expressions, and context instead of translating word for word.</p>
+          </div>
+          <div class="why-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="8.5"></circle>
+              <path d="M12 7.5V12l3 2"></path>
+            </svg>
+            <h3>Always Improving</h3>
+            <p>Continuously refined with new languages, better speech recognition, and ongoing research.</p>
+          </div>
+        </div>
+
+        <div class="numbers-row">
+          <h3 class="numbers-heading">Some of the numbers</h3>
+          <div class="numbers-viewport">
+            <div class="numbers-track" id="numbers-track">
+              <div class="numbers-group">
+                <div class="stat-card"><p class="stat-num">30+</p><p class="stat-label">African Languages</p></div>
+                <div class="stat-card"><p class="stat-num">19B+</p><p class="stat-label">African Language Tokens</p></div>
+                <div class="stat-card"><p class="stat-num">98%</p><p class="stat-label">API Integration Success Rate</p></div>
+                <div class="stat-card"><p class="stat-num">100%</p><p class="stat-label">Research backed</p></div>
+              </div>
+              <div class="numbers-group" aria-hidden="true">
+                <div class="stat-card"><p class="stat-num">30+</p><p class="stat-label">African Languages</p></div>
+                <div class="stat-card"><p class="stat-num">19B+</p><p class="stat-label">African Language Tokens</p></div>
+                <div class="stat-card"><p class="stat-num">98%</p><p class="stat-label">API Integration Success Rate</p></div>
+                <div class="stat-card"><p class="stat-num">100%</p><p class="stat-label">Research backed</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Mansa Agent spotlight ===== -->
+    <section class="agent-spotlight">
+      <div class="agent-panel">
+        <img class="agent-bg-img" src="images/agent-bg.jpg" alt="" aria-hidden="true" data-parallax="0.1" data-parallax-scale="1.1" />
+        <div class="agent-copy">
+          <span class="agent-badge">
+            <img class="agent-badge-icon" src="images/accordion-icon.png" alt="" aria-hidden="true">
+            Mansa Agent
+          </span>
+          <h2 class="agent-title">An AI that doesn't just answer, it gets things done.</h2>
+          <p class="agent-desc">Research the web, manage your email and calendar, work with GitHub, automate recurring tasks, remember your preferences, and act on your behalf, all from one intelligent assistant.</p>
+          <ul class="agent-list">
+            <li>Persistent memory</li>
+            <li>Web research</li>
+            <li>Email assistant</li>
+            <li>Calendar management</li>
+            <li>GitHub integration</li>
+            <li>Recurring automations</li>
+            <li>Long-term goals</li>
+            <li>Multilingual by default</li>
+          </ul>
+          <a class="agent-btn" href="mansa-agent.html">Explore Mansa Agent</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Supported Languages ===== -->
+    <section class="languages">
+      <div class="section-head">
+        <span class="badge-chip">
+          <img src="images/accordion-icon.png" alt="" aria-hidden="true">
+          Mansa's languages
+        </span>
+        <h2 class="section-title">Supported Languages</h2>
+        <p class="section-sub">Our language base is constantly being updated</p>
+      </div>
+
+      <div class="globe-stage" id="globe-stage">
+        <img class="globe-img" src="images/globe.png" alt="Globe centered on Africa" />
+        <svg class="globe-lines" viewBox="260 260 760 630" preserveAspectRatio="none" aria-hidden="true">
+          <line class="lang-line" data-lang="amharic" x1="632.1" y1="365.9" x2="628" y2="301"></line>
+          <circle class="lang-dot-svg" data-lang="amharic" cx="628" cy="301" r="4"></circle>
+          <line class="lang-line" data-lang="ewe" x1="693.0" y1="371.6" x2="705" y2="325"></line>
+          <circle class="lang-dot-svg" data-lang="ewe" cx="705" cy="325" r="4"></circle>
+          <line class="lang-line" data-lang="tsonga" x1="537.6" y1="397.3" x2="497" y2="335"></line>
+          <circle class="lang-dot-svg" data-lang="tsonga" cx="497" cy="335" r="4"></circle>
+          <line class="lang-line" data-lang="bemba" x1="770.6" y1="411.6" x2="820" y2="353"></line>
+          <circle class="lang-dot-svg" data-lang="bemba" cx="820" cy="353" r="4"></circle>
+          <line class="lang-line" data-lang="tswana" x1="504.6" y1="424.4" x2="457" y2="378"></line>
+          <circle class="lang-dot-svg" data-lang="tswana" cx="457" cy="378" r="4"></circle>
+          <line class="lang-line" data-lang="arabic" x1="795.8" y1="437.2" x2="845" y2="397"></line>
+          <circle class="lang-dot-svg" data-lang="arabic" cx="845" cy="397" r="4"></circle>
+          <line class="lang-line" data-lang="twi" x1="465.9" y1="481.4" x2="382" y2="444"></line>
+          <circle class="lang-dot-svg" data-lang="twi" cx="382" cy="444" r="4"></circle>
+          <line class="lang-line" data-lang="yoruba" x1="812.3" y1="460.6" x2="845" y2="441"></line>
+          <circle class="lang-dot-svg" data-lang="yoruba" cx="845" cy="441" r="4"></circle>
+          <line class="lang-line" data-lang="oromo" x1="454.6" y1="514.7" x2="427" y2="508"></line>
+          <circle class="lang-dot-svg" data-lang="oromo" cx="427" cy="508" r="4"></circle>
+          <line class="lang-line" data-lang="bambara" x1="827.8" y1="493.0" x2="860" y2="481"></line>
+          <circle class="lang-dot-svg" data-lang="bambara" cx="860" cy="481" r="4"></circle>
+          <line class="lang-line" data-lang="sepedi" x1="449.0" y1="559.5" x2="383" y2="559"></line>
+          <circle class="lang-dot-svg" data-lang="sepedi" cx="383" cy="559" r="4"></circle>
+          <line class="lang-line" data-lang="hausa" x1="837.8" y1="531.8" x2="863" y2="528"></line>
+          <circle class="lang-dot-svg" data-lang="hausa" cx="863" cy="528" r="4"></circle>
+          <line class="lang-line" data-lang="ndebele-south" x1="453.7" y1="603.4" x2="424" y2="610"></line>
+          <circle class="lang-dot-svg" data-lang="ndebele-south" cx="424" cy="610" r="4"></circle>
+          <line class="lang-line" data-lang="chichewa" x1="839.1" y1="579.4" x2="877" y2="583"></line>
+          <circle class="lang-dot-svg" data-lang="chichewa" cx="877" cy="583" r="4"></circle>
+          <line class="lang-line" data-lang="sesotho" x1="463.1" y1="634.0" x2="406" y2="657"></line>
+          <circle class="lang-dot-svg" data-lang="sesotho" cx="406" cy="657" r="4"></circle>
+          <line class="lang-line" data-lang="igbo" x1="831.2" y1="619.1" x2="866" y2="630"></line>
+          <circle class="lang-dot-svg" data-lang="igbo" cx="866" cy="630" r="4"></circle>
+          <line class="lang-line" data-lang="tigrinya" x1="484.5" y1="673.4" x2="441" y2="704"></line>
+          <circle class="lang-dot-svg" data-lang="tigrinya" cx="441" cy="704" r="4"></circle>
+          <line class="lang-line" data-lang="zulu" x1="816.6" y1="653.7" x2="860" y2="677"></line>
+          <circle class="lang-dot-svg" data-lang="zulu" cx="860" cy="677" r="4"></circle>
+          <line class="lang-line" data-lang="swati" x1="502.9" y1="695.8" x2="445" y2="751"></line>
+          <circle class="lang-dot-svg" data-lang="swati" cx="445" cy="751" r="4"></circle>
+          <line class="lang-line" data-lang="kikongo" x1="798.5" y1="681.4" x2="853" y2="724"></line>
+          <circle class="lang-dot-svg" data-lang="kikongo" cx="853" cy="724" r="4"></circle>
+          <line class="lang-line" data-lang="xhosa" x1="539.6" y1="726.0" x2="497" y2="793"></line>
+          <circle class="lang-dot-svg" data-lang="xhosa" cx="497" cy="793" r="4"></circle>
+          <line class="lang-line" data-lang="kinyarwanda" x1="762.8" y1="716.7" x2="798" y2="763"></line>
+          <circle class="lang-dot-svg" data-lang="kinyarwanda" cx="798" cy="763" r="4"></circle>
+          <line class="lang-line" data-lang="luganda" x1="576.4" y1="744.3" x2="549" y2="818"></line>
+          <circle class="lang-dot-svg" data-lang="luganda" cx="549" cy="818" r="4"></circle>
+          <line class="lang-line" data-lang="kirundi" x1="750.4" y1="725.3" x2="805" y2="810"></line>
+          <circle class="lang-dot-svg" data-lang="kirundi" cx="805" cy="810" r="4"></circle>
+          <line class="lang-line" data-lang="swahili" x1="583.0" y1="746.6" x2="551" y2="843"></line>
+          <circle class="lang-dot-svg" data-lang="swahili" cx="551" cy="843" r="4"></circle>
+          <line class="lang-line" data-lang="afrikaans" x1="723.7" y1="739.7" x2="762" y2="826"></line>
+          <circle class="lang-dot-svg" data-lang="afrikaans" cx="762" cy="826" r="4"></circle>
+          <line class="lang-line" data-lang="somali" x1="623.9" y1="755.4" x2="613" y2="858"></line>
+          <circle class="lang-dot-svg" data-lang="somali" cx="613" cy="858" r="4"></circle>
+          <line class="lang-line" data-lang="shona" x1="668.2" y1="755.1" x2="679" y2="843"></line>
+          <circle class="lang-dot-svg" data-lang="shona" cx="679" cy="843" r="4"></circle>
+          <line class="lang-line" data-lang="lingala" x1="715.8" y1="743.0" x2="751" y2="833"></line>
+          <circle class="lang-dot-svg" data-lang="lingala" cx="751" cy="833" r="4"></circle>
+        </svg>
+        <div class="lang-labels">
+          <button type="button" class="lang-item left" data-lang="amharic" style="left:48.42%;top:6.51%">Amharic</button>
+          <button type="button" class="lang-item right" data-lang="ewe" style="left:58.55%;top:10.32%">Ewe</button>
+          <button type="button" class="lang-item left" data-lang="tsonga" style="left:31.18%;top:11.90%">Tsonga</button>
+          <button type="button" class="lang-item right" data-lang="bemba" style="left:73.68%;top:14.76%">Bemba</button>
+          <button type="button" class="lang-item left" data-lang="tswana" style="left:25.92%;top:18.73%">Tswana</button>
+          <button type="button" class="lang-item right" data-lang="arabic" style="left:76.97%;top:21.75%">Arabic</button>
+          <button type="button" class="lang-item left" data-lang="twi" style="left:16.05%;top:29.21%">Twi</button>
+          <button type="button" class="lang-item right" data-lang="yoruba" style="left:76.97%;top:28.73%">Yoruba</button>
+          <button type="button" class="lang-item left" data-lang="oromo" style="left:21.97%;top:39.37%">Oromo</button>
+          <button type="button" class="lang-item right" data-lang="bambara" style="left:78.95%;top:35.08%">Bambara</button>
+          <button type="button" class="lang-item left" data-lang="sepedi" style="left:16.18%;top:47.46%">Sepedi</button>
+          <button type="button" class="lang-item right" data-lang="hausa" style="left:79.34%;top:42.54%">Hausa</button>
+          <button type="button" class="lang-item left" data-lang="ndebele-south" style="left:21.58%;top:55.56%">Ndebele (South)</button>
+          <button type="button" class="lang-item right" data-lang="chichewa" style="left:81.18%;top:51.27%">Chichewa</button>
+          <button type="button" class="lang-item left" data-lang="sesotho" style="left:19.21%;top:63.02%">Sesotho</button>
+          <button type="button" class="lang-item right" data-lang="igbo" style="left:79.74%;top:58.73%">Igbo</button>
+          <button type="button" class="lang-item left" data-lang="tigrinya" style="left:23.82%;top:70.48%">Tigrinya</button>
+          <button type="button" class="lang-item right" data-lang="zulu" style="left:78.95%;top:66.19%">Zulu</button>
+          <button type="button" class="lang-item left" data-lang="swati" style="left:24.34%;top:77.94%">Swati</button>
+          <button type="button" class="lang-item right" data-lang="kikongo" style="left:78.03%;top:73.65%">Kikongo</button>
+          <button type="button" class="lang-item left" data-lang="xhosa" style="left:31.18%;top:84.60%">Xhosa</button>
+          <button type="button" class="lang-item right" data-lang="kinyarwanda" style="left:70.79%;top:79.84%">Kinyarwanda</button>
+          <button type="button" class="lang-item left" data-lang="luganda" style="left:38.03%;top:88.57%">Luganda</button>
+          <button type="button" class="lang-item right" data-lang="kirundi" style="left:71.71%;top:87.30%">Kirundi</button>
+          <button type="button" class="lang-item left" data-lang="swahili" style="left:38.29%;top:92.54%">Swahili</button>
+          <button type="button" class="lang-item right" data-lang="afrikaans" style="left:66.05%;top:89.84%">Afrikaans</button>
+          <button type="button" class="lang-item left" data-lang="somali" style="left:46.45%;top:94.92%">Somali</button>
+          <button type="button" class="lang-item right" data-lang="shona" style="left:55.13%;top:92.54%">Shona</button>
+          <button type="button" class="lang-item right" data-lang="lingala" style="left:64.61%;top:90.95%">Lingala</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== How Teams Use Mansa ===== -->
+    <section class="usecases">
+      <div class="usecases-inner">
+        <div class="section-head">
+          <span class="badge-chip">
+            <img src="images/accordion-icon.png" alt="" aria-hidden="true">
+            Use cases
+          </span>
+          <h2 class="section-title">How Teams Use Mansa</h2>
+        </div>
+
+        <div class="usecases-tabs" id="usecases-tabs">
+          <button type="button" class="uc-tab is-active" data-tab="support">Support</button>
+          <button type="button" class="uc-tab" data-tab="localization">Localization</button>
+          <button type="button" class="uc-tab" data-tab="research">Research</button>
+          <button type="button" class="uc-tab" data-tab="development">Development</button>
+          <button type="button" class="uc-tab" data-tab="education">Education</button>
+          <button type="button" class="uc-tab" data-tab="operations">Operations</button>
+        </div>
+
+        <div class="usecases-body">
+          <div class="uc-copy">
+            <h3 class="uc-copy-title" id="uc-title">Deliver multilingual support that feels local.</h3>
+            <p class="uc-copy-desc" id="uc-desc">Resolve customer queries, power AI chatbots, and provide real-time assistance across African languages.</p>
+          </div>
+          <div class="usecases-visual">
+            <img src="images/usecases-support.png" alt="Mansa AI chat screen" data-parallax="0.1" data-parallax-scale="1.12" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Get started (app steps) ===== -->
+    <section class="get-started-steps">
+      <div class="gs-inner">
+        <div class="gs-copy">
+          <h2 class="gs-title">Get Started on the app in Minutes</h2>
+          <div class="gs-stores">
+            <a class="store-badge" href="#">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.365 1.43c0 1.14-.437 2.086-1.312 2.837-.874.75-1.87 1.14-2.986 1.17-.083-1.05.32-2.02 1.208-2.91.874-.87 1.883-1.34 3.028-1.41.03.1.06.2.062.313zM20.6 17.24c-.36.83-.78 1.58-1.26 2.25-.66.92-1.2 1.56-1.62 1.92-.66.6-1.36.9-2.1.92-.54.02-1.19-.15-1.95-.5-.76-.35-1.46-.5-2.1-.5-.67 0-1.4.15-2.18.5-.79.35-1.42.53-1.9.55-.72.03-1.44-.28-2.14-.94-.46-.39-1.03-1.06-1.71-2.01-.73-1.02-1.33-2.2-1.8-3.55-.5-1.45-.75-2.85-.75-4.21 0-1.56.34-2.9 1.02-4.02.53-.9 1.24-1.62 2.12-2.14.88-.53 1.83-.8 2.85-.82.57 0 1.32.18 2.26.53.94.35 1.54.53 1.8.53.2 0 .87-.2 2-.62 1.07-.38 1.98-.54 2.72-.48 2.01.16 3.53.96 4.53 2.4-1.8 1.09-2.69 2.62-2.67 4.58.02 1.53.57 2.8 1.65 3.8.5.46 1.05.82 1.66 1.07-.13.4-.28.79-.44 1.17z"></path></svg>
+              <span class="store-text"><span class="store-eyebrow">Download on the</span><span class="store-name">App Store</span></span>
+            </a>
+            <a class="store-badge" href="#">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.3 2.3c-.3.3-.5.8-.5 1.4v16.6c0 .6.2 1.1.5 1.4l.1.1L14 12v-.2L4.4 2.2l-.1.1z"></path><path d="M17.3 15.3 14 12l3.3-3.3 4.1 2.3c1.1.6 1.1 1.7 0 2.4l-4.1 2.3z" opacity=".7"></path><path d="M17.3 15.3 14 12 4.3 21.7c.4.4 1 .4 1.7 0l11.3-6.4z"></path><path d="M17.3 8.7 6 2.3c-.7-.4-1.3-.4-1.7 0L14 12l3.3-3.3z" opacity=".85"></path></svg>
+              <span class="store-text"><span class="store-eyebrow">GET IT ON</span><span class="store-name">Google Play</span></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="gs-steps">
+          <div class="gs-step">
+            <p class="gs-step-num">1</p>
+            <p>Download the app</p>
+          </div>
+          <div class="gs-step">
+            <p class="gs-step-num">2</p>
+            <p>Create your account.</p>
+          </div>
+          <div class="gs-step">
+            <p class="gs-step-num">3</p>
+            <p>Start using Mansa agent, chatting, translating, or transcribing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Impact video ===== -->
+    <section class="impact">
+      <div class="impact-panel">
+        <img class="impact-bg-img" src="images/impact-bg.jpg" alt="" aria-hidden="true" data-parallax="0.1" data-parallax-scale="1.08" />
+        <div class="impact-content">
+          <span class="badge-chip">
+            <img src="images/accordion-icon.png" alt="" aria-hidden="true">
+            Mansa
+          </span>
+          <h2 class="impact-title">How Mansa is Making Real Impact</h2>
+          <p class="impact-sub">Mansa proves that powerful AI shouldn't leave out African Languages</p>
+
+          <div class="video-card" id="impact-video-card">
+            <video id="impact-video" src="video/impact.mp4" poster="images/impact-video-poster.jpg" autoplay muted loop playsinline preload="auto"></video>
+            <div class="video-scrim-top" aria-hidden="true"></div>
+            <div class="video-scrim-bottom" aria-hidden="true"></div>
+
+            <div class="video-brand">
+              <span class="video-brand-mark">
+                <img src="images/mansa-mark-white.png" alt="" aria-hidden="true">
+              </span>
+              <span>
+                <span class="video-brand-name" style="display:block;">Build Inclusive Technology</span>
+                <span class="video-brand-sub">Mansa</span>
+              </span>
+            </div>
+
+            <button type="button" class="video-play" id="impact-video-toggle" aria-label="Pause video">
+              <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+              <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"></rect><rect x="14" y="5" width="4" height="14" rx="1"></rect></svg>
+            </button>
+
+            <span class="video-link" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.07 0l2-2a5 5 0 0 0-7.07-7.07l-1.5 1.5"></path><path d="M14 11a5 5 0 0 0-7.07 0l-2 2a5 5 0 0 0 7.07 7.07l1.5-1.5"></path></svg>
+            </span>
+            <a class="video-youtube" href="#">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"></rect><path d="M10 9v6l5-3z" fill="#000"></path></svg>
+              <span>Watch on YouTube</span>
+            </a>
+          </div>
+
+          <div class="impact-actions">
+            <a class="impact-btn-light" href="get-started.html">Try Mansa</a>
+            <a class="btn-primary" href="get-started.html">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== API integration CTA ===== -->
+    <section class="api-cta">
+      <span class="api-cta-mark tl" aria-hidden="true" data-parallax="0.08" data-parallax-scale="1">
+        <img src="images/mansa-mark-white.png" alt="">
+      </span>
+      <span class="api-cta-mark tr" aria-hidden="true" data-parallax="0.12" data-parallax-scale="1">
+        <img src="images/mansa-mark-white.png" alt="">
+      </span>
+      <span class="api-cta-mark bl" aria-hidden="true" data-parallax="0.14" data-parallax-scale="1">
+        <img src="images/mansa-mark-white.png" alt="">
+      </span>
+      <span class="api-cta-mark br" aria-hidden="true" data-parallax="0.1" data-parallax-scale="1">
+        <img src="images/mansa-mark-white.png" alt="">
+      </span>
+      <h2 class="api-cta-title">Want to Integrate our API's to your Enterprise?</h2>
+      <div class="api-cta-actions">
+        <a class="btn-primary" href="get-started.html">Contact Us</a>
+        <a class="cta-btn" href="#" style="color:#fff; border-color: rgba(255,255,255,.7);">Check Our API Documentation</a>
+      </div>
+    </section>
+
+    <!-- ===== FAQs ===== -->
+    <section class="faqs">
+      <div class="faqs-inner">
+        <h2 class="faqs-heading">FAQs</h2>
+        <div class="faq-list" id="faq-list">
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              What are the core features of Mansa?              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner"><p>Mansa gives you chat, translation, transcription, and speech recognition built specifically for African languages, plus Mansa Agent, which can research, manage email and calendar, and automate everyday tasks.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              How is Mansa typically used?              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner"><p>Teams use Mansa to chat and get answers in African languages, translate and transcribe content, and connect Mansa Agent to tools like email, calendar, and GitHub to get work done automatically.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              What are the benefits of Mansa to my team?              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner"><p>Mansa helps your team communicate and build products in African languages without sacrificing accuracy or nuance, saving time on translation, support, and localization work.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              Can I try Mansa before deploying it?              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner"><p>Yes. You can get started on the app in minutes, or contact us to explore an API trial for your enterprise use case.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              What makes Mansa different compared to ChatGPT?              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner"><p>Mansa is trained specifically on African languages, dialects, and cultural context, so it understands meaning and nuance instead of translating word for word like general-purpose models.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              Can I integrate Mansa into my existing applications?              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner"><p>Yes — Mansa's API lets you add chat, translation, transcription, and speech recognition for African languages directly into your own products.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              How is Mansa priced?              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner"><p>Mansa offers a free tier to get started, with usage-based and enterprise plans for teams that need higher volume or dedicated support. See our pricing page for details.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              Do you train on data? Is our data private/secure?              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner"><p>Your data is never used to train our models without explicit consent, and enterprise data is handled under strict privacy and security controls.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Final CTA ===== -->
+    <section class="cta">
+      <img class="cta-bg-img" src="images/cta-bg.png" alt="" aria-hidden="true" data-parallax="0.15" data-parallax-scale="1.1" />
+      <div class="cta-inner">
+        <h2 class="cta-title">Unlock the power of African language AI.</h2>
+        <div class="cta-actions">
+          <span class="cta-label">Download the app</span>
+          <a class="cta-btn" href="#">App Store</a>
+          <a class="cta-btn" href="#">Play Store</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#">Mansa Nano</a></li>
+            <li><a href="#">Desktop App</a></li>
+            <li><a href="#">iPhone App</a></li>
+            <li><a href="#">Android App</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="get-started.html">Getting Started</a></li>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Give Feedback</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>API Platform</h4>
+          <ul>
+            <li><a href="#">API Overview</a></li>
+            <li><a href="#">API Models</a></li>
+            <li><a href="#">API Documentation</a></li>
+            <li><a href="#">API FAQs</a></li>
+            <li><a href="#">API Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow Us</h4>
+          <ul>
+            <li><a href="#">X (Twitter)</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">YouTube</a></li>
+          </ul>
+        </div>
+        <div class="footer-stores">
+          <a class="store-badge" href="#">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.365 1.43c0 1.14-.437 2.086-1.312 2.837-.874.75-1.87 1.14-2.986 1.17-.083-1.05.32-2.02 1.208-2.91.874-.87 1.883-1.34 3.028-1.41.03.1.06.2.062.313zM20.6 17.24c-.36.83-.78 1.58-1.26 2.25-.66.92-1.2 1.56-1.62 1.92-.66.6-1.36.9-2.1.92-.54.02-1.19-.15-1.95-.5-.76-.35-1.46-.5-2.1-.5-.67 0-1.4.15-2.18.5-.79.35-1.42.53-1.9.55-.72.03-1.44-.28-2.14-.94-.46-.39-1.03-1.06-1.71-2.01-.73-1.02-1.33-2.2-1.8-3.55-.5-1.45-.75-2.85-.75-4.21 0-1.56.34-2.9 1.02-4.02.53-.9 1.24-1.62 2.12-2.14.88-.53 1.83-.8 2.85-.82.57 0 1.32.18 2.26.53.94.35 1.54.53 1.8.53.2 0 .87-.2 2-.62 1.07-.38 1.98-.54 2.72-.48 2.01.16 3.53.96 4.53 2.4-1.8 1.09-2.69 2.62-2.67 4.58.02 1.53.57 2.8 1.65 3.8.5.46 1.05.82 1.66 1.07-.13.4-.28.79-.44 1.17z"></path></svg>
+            <span class="store-text"><span class="store-eyebrow">Download on the</span><span class="store-name">App Store</span></span>
+          </a>
+          <a class="store-badge" href="#">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.3 2.3c-.3.3-.5.8-.5 1.4v16.6c0 .6.2 1.1.5 1.4l.1.1L14 12v-.2L4.4 2.2l-.1.1z"></path><path d="M17.3 15.3 14 12l3.3-3.3 4.1 2.3c1.1.6 1.1 1.7 0 2.4l-4.1 2.3z" opacity=".7"></path><path d="M17.3 15.3 14 12 4.3 21.7c.4.4 1 .4 1.7 0l11.3-6.4z"></path><path d="M17.3 8.7 6 2.3c-.7-.4-1.3-.4-1.7 0L14 12l3.3-3.3z" opacity=".85"></path></svg>
+            <span class="store-text"><span class="store-eyebrow">GET IT ON</span><span class="store-name">Google Play</span></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span class="footer-mark" aria-hidden="true">
+          <img src="images/mansa-mark-white.png" alt="">
+        </span>
+        <p class="footer-copy">© Copyright 2026 Mansa by African Languages Lab</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
