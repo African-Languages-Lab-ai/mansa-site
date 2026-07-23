@@ -482,7 +482,9 @@ button { font: inherit; }
 .cta {
   position: relative;
   overflow: hidden;
-  background-color: #7a1e0c;
+  /* Matches the top and bottom edge colours of cta-bg.png, so if the parallax
+     layer is ever a sub-pixel short there is no contrasting strip to see. */
+  background: linear-gradient(180deg, #6F120D 0%, #B67B3E 100%);
 }
 .cta-bg-img {
   position: absolute;
@@ -2120,7 +2122,10 @@ button { font: inherit; }
    Mansa AI page
    ============================================================ */
 .ai-hero,
-.ai-cta { position: relative; overflow: hidden; background: #241209; }
+.ai-cta { position: relative; overflow: hidden; }
+/* Fallbacks match each image's own top/bottom edge colours — see the note on .cta */
+.ai-hero { background: linear-gradient(180deg, #B72204 0%, #2E1D15 100%); }
+.ai-cta  { background: linear-gradient(180deg, #3A1005 0%, #000000 100%); }
 
 .ai-hero-bg,
 .ai-cta-bg {

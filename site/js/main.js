@@ -241,11 +241,31 @@
         if (isNaN(speed)) speed = 0.15;
         var scale = parseFloat(el.getAttribute("data-parallax-scale"));
         if (isNaN(scale)) scale = 1.12;
-        var rect = el.getBoundingClientRect();
-        var center = rect.top + rect.height / 2;
+
+        // Measure the host, not the layer: the layer is already transformed,
+        // so reading its own rect feeds its previous offset back into the maths.
+        var host = el.parentElement || el;
+        var hostRect = host.getBoundingClientRect();
+        var center = hostRect.top + hostRect.height / 2;
         var offset = (center - vh / 2) * speed;
-        if (offset > MAX_PARALLAX_OFFSET) offset = MAX_PARALLAX_OFFSET;
-        if (offset < -MAX_PARALLAX_OFFSET) offset = -MAX_PARALLAX_OFFSET;
+
+        // A layer that fills its host (a background image) has to keep covering
+        // it. Scaling up by S leaves (S-1)*height/2 of bleed above and below,
+        // and translateY sits after scale() so it is multiplied by S too. Pan
+        // further than that and the layer's edge lifts off the section, showing
+        // the background colour behind it — the maroon strip under the CTAs.
+        // Smaller decorative layers are meant to drift off the edge, so they
+        // just use the flat cap.
+        var layerHeight = el.offsetHeight || hostRect.height;
+        var coversHost = layerHeight >= hostRect.height - 1;
+        var cap = MAX_PARALLAX_OFFSET;
+        if (coversHost) {
+          var slack = ((scale - 1) * layerHeight) / (2 * scale) * 0.9; // 10% safety
+          cap = Math.min(cap, Math.max(slack, 0));
+        }
+
+        if (offset > cap) offset = cap;
+        if (offset < -cap) offset = -cap;
         el.style.transform = "scale(" + scale + ") translateY(" + offset.toFixed(1) + "px)";
       });
 
