@@ -2513,3 +2513,8 @@ button { font: inherit; }
   line-height: 1.45;
   color: var(--ink-soft);
 }
+
+/* The [hidden] attribute is only a UA-stylesheet `display:none`, so any author
+   rule that sets display (e.g. .au-grid{display:grid}) silently beats it and
+   leaves "hidden" tab panels on screen. Make it stick site-wide. */
+[hidden] { display: none !important; }
