@@ -14,16 +14,15 @@
     };
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       if (pPct) pPct.textContent = "100%";
-      if (pFill) pFill.style.width = "100%";
       pDone();
     } else {
-      if (pFill) pFill.style.animation = "none"; // take over from the CSS fallback
-      var pStart = performance.now();
-      var pTick = function (now) {
-        var t = Math.min(1, (now - pStart) / 1000);
-        var p = Math.round(t * 100);
-        if (pPct) pPct.textContent = p + "%";
-        if (pFill) pFill.style.width = p + "%";
+      // The CSS bar starts filling at page render (1s). main.js may load a bit
+      // later, so drive the number off performance.now() (ms since page load)
+      // rather than script-start — that keeps the % locked to the bar with no
+      // backward jump, however slowly the script arrives on production.
+      var pTick = function () {
+        var t = Math.min(1, performance.now() / 1000);
+        if (pPct) pPct.textContent = Math.round(t * 100) + "%";
         if (t < 1) requestAnimationFrame(pTick);
         else setTimeout(pDone, 130);
       };

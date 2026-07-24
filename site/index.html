@@ -25,10 +25,25 @@
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <!-- Preload the loader logo + inline its critical styles so the loader paints
+       instantly on the home page, before the main stylesheet loads (no flash). -->
+  <link rel="preload" as="image" href="images/mansa-mark.png" />
+  <style>
+    #preloader{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:#FBFAF4;transition:opacity .45s cubic-bezier(.4,0,.2,1),visibility .45s cubic-bezier(.4,0,.2,1)}
+    #preloader.is-done{opacity:0;visibility:hidden;pointer-events:none}
+    #preloader .preloader-inner{display:flex;flex-direction:column;align-items:center}
+    #preloader .preloader-logo{width:82px;height:auto;animation:preloader-float 1.5s ease-in-out infinite}
+    #preloader .preloader-bar{margin-top:30px;width:200px;height:3px;background:rgba(92,26,14,.14);border-radius:999px;overflow:hidden}
+    #preloader .preloader-fill{display:block;height:100%;width:0;background:#5C1A0E;border-radius:999px;animation:preloader-progress 1s linear forwards}
+    #preloader .preloader-pct{margin-top:14px;font-size:13px;font-weight:500;letter-spacing:.05em;color:#4A3F38;font-variant-numeric:tabular-nums;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+    @keyframes preloader-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+    @keyframes preloader-progress{from{width:0}to{width:100%}}
+    @media (prefers-reduced-motion: reduce){#preloader .preloader-logo{animation:none}}
+  </style>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <!-- Preloader -->
+  <!-- Preloader (home page only) -->
   <div class="preloader" id="preloader" role="status" aria-label="Loading">
     <div class="preloader-inner">
       <img class="preloader-logo" src="images/mansa-mark.png" alt="Mansa" />
@@ -81,7 +96,7 @@
           <li><a class="nav-link" href="pricing.html">Pricing</a></li>
 
           <li class="nav-cta-item">
-            <a class="btn-primary" href="get-started.html">Get started</a>
+            <a class="btn-primary" href="https://mansa-web-six.vercel.app">Get started</a>
           </li>
         </ul>
       </nav>
@@ -286,8 +301,8 @@
         <h2 class="cta-title">Your AI partner in thinking for Africa.</h2>
         <div class="cta-actions">
           <span class="cta-label">Download the app</span>
-          <a class="cta-btn" href="#">App Store</a>
-          <a class="cta-btn" href="#">Play Store</a>
+          <a class="cta-btn" href="https://mansa-web-six.vercel.app">App Store</a>
+          <a class="cta-btn" href="https://mansa-web-six.vercel.app">Play Store</a>
         </div>
       </div>
     </section>
@@ -530,11 +545,11 @@
         <div class="gs-copy">
           <h2 class="gs-title">Get Started on the app in Minutes</h2>
           <div class="gs-stores">
-            <a class="store-badge" href="#">
+            <a class="store-badge" href="https://mansa-web-six.vercel.app">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.365 1.43c0 1.14-.437 2.086-1.312 2.837-.874.75-1.87 1.14-2.986 1.17-.083-1.05.32-2.02 1.208-2.91.874-.87 1.883-1.34 3.028-1.41.03.1.06.2.062.313zM20.6 17.24c-.36.83-.78 1.58-1.26 2.25-.66.92-1.2 1.56-1.62 1.92-.66.6-1.36.9-2.1.92-.54.02-1.19-.15-1.95-.5-.76-.35-1.46-.5-2.1-.5-.67 0-1.4.15-2.18.5-.79.35-1.42.53-1.9.55-.72.03-1.44-.28-2.14-.94-.46-.39-1.03-1.06-1.71-2.01-.73-1.02-1.33-2.2-1.8-3.55-.5-1.45-.75-2.85-.75-4.21 0-1.56.34-2.9 1.02-4.02.53-.9 1.24-1.62 2.12-2.14.88-.53 1.83-.8 2.85-.82.57 0 1.32.18 2.26.53.94.35 1.54.53 1.8.53.2 0 .87-.2 2-.62 1.07-.38 1.98-.54 2.72-.48 2.01.16 3.53.96 4.53 2.4-1.8 1.09-2.69 2.62-2.67 4.58.02 1.53.57 2.8 1.65 3.8.5.46 1.05.82 1.66 1.07-.13.4-.28.79-.44 1.17z"></path></svg>
               <span class="store-text"><span class="store-eyebrow">Download on the</span><span class="store-name">App Store</span></span>
             </a>
-            <a class="store-badge" href="#">
+            <a class="store-badge" href="https://mansa-web-six.vercel.app">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.3 2.3c-.3.3-.5.8-.5 1.4v16.6c0 .6.2 1.1.5 1.4l.1.1L14 12v-.2L4.4 2.2l-.1.1z"></path><path d="M17.3 15.3 14 12l3.3-3.3 4.1 2.3c1.1.6 1.1 1.7 0 2.4l-4.1 2.3z" opacity=".7"></path><path d="M17.3 15.3 14 12 4.3 21.7c.4.4 1 .4 1.7 0l11.3-6.4z"></path><path d="M17.3 8.7 6 2.3c-.7-.4-1.3-.4-1.7 0L14 12l3.3-3.3z" opacity=".85"></path></svg>
               <span class="store-text"><span class="store-eyebrow">GET IT ON</span><span class="store-name">Google Play</span></span>
             </a>
@@ -600,7 +615,7 @@
           </div>
 
           <div class="impact-actions">
-            <a class="impact-btn-light" href="get-started.html">Try Mansa</a>
+            <a class="impact-btn-light" href="https://mansa-web-six.vercel.app">Try Mansa</a>
             <a class="btn-primary" href="get-started.html">Contact Us</a>
           </div>
         </div>
@@ -692,8 +707,8 @@
         <h2 class="cta-title">Unlock the power of African language AI.</h2>
         <div class="cta-actions">
           <span class="cta-label">Download the app</span>
-          <a class="cta-btn" href="#">App Store</a>
-          <a class="cta-btn" href="#">Play Store</a>
+          <a class="cta-btn" href="https://mansa-web-six.vercel.app">App Store</a>
+          <a class="cta-btn" href="https://mansa-web-six.vercel.app">Play Store</a>
         </div>
       </div>
     </section>
@@ -747,11 +762,11 @@
           </ul>
         </div>
         <div class="footer-stores">
-          <a class="store-badge" href="#">
+          <a class="store-badge" href="https://mansa-web-six.vercel.app">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.365 1.43c0 1.14-.437 2.086-1.312 2.837-.874.75-1.87 1.14-2.986 1.17-.083-1.05.32-2.02 1.208-2.91.874-.87 1.883-1.34 3.028-1.41.03.1.06.2.062.313zM20.6 17.24c-.36.83-.78 1.58-1.26 2.25-.66.92-1.2 1.56-1.62 1.92-.66.6-1.36.9-2.1.92-.54.02-1.19-.15-1.95-.5-.76-.35-1.46-.5-2.1-.5-.67 0-1.4.15-2.18.5-.79.35-1.42.53-1.9.55-.72.03-1.44-.28-2.14-.94-.46-.39-1.03-1.06-1.71-2.01-.73-1.02-1.33-2.2-1.8-3.55-.5-1.45-.75-2.85-.75-4.21 0-1.56.34-2.9 1.02-4.02.53-.9 1.24-1.62 2.12-2.14.88-.53 1.83-.8 2.85-.82.57 0 1.32.18 2.26.53.94.35 1.54.53 1.8.53.2 0 .87-.2 2-.62 1.07-.38 1.98-.54 2.72-.48 2.01.16 3.53.96 4.53 2.4-1.8 1.09-2.69 2.62-2.67 4.58.02 1.53.57 2.8 1.65 3.8.5.46 1.05.82 1.66 1.07-.13.4-.28.79-.44 1.17z"></path></svg>
             <span class="store-text"><span class="store-eyebrow">Download on the</span><span class="store-name">App Store</span></span>
           </a>
-          <a class="store-badge" href="#">
+          <a class="store-badge" href="https://mansa-web-six.vercel.app">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.3 2.3c-.3.3-.5.8-.5 1.4v16.6c0 .6.2 1.1.5 1.4l.1.1L14 12v-.2L4.4 2.2l-.1.1z"></path><path d="M17.3 15.3 14 12l3.3-3.3 4.1 2.3c1.1.6 1.1 1.7 0 2.4l-4.1 2.3z" opacity=".7"></path><path d="M17.3 15.3 14 12 4.3 21.7c.4.4 1 .4 1.7 0l11.3-6.4z"></path><path d="M17.3 8.7 6 2.3c-.7-.4-1.3-.4-1.7 0L14 12l3.3-3.3z" opacity=".85"></path></svg>
             <span class="store-text"><span class="store-eyebrow">GET IT ON</span><span class="store-name">Google Play</span></span>
           </a>
