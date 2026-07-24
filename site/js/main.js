@@ -1,6 +1,36 @@
 (function () {
   "use strict";
 
+  /* --- Page preloader: floating logo counts 0→100%, then reveals the page --- */
+  var preloader = document.getElementById("preloader");
+  if (preloader) {
+    var pFill = preloader.querySelector(".preloader-fill");
+    var pPct = preloader.querySelector(".preloader-pct");
+    var pDone = function () {
+      preloader.classList.add("is-done");
+      setTimeout(function () {
+        if (preloader && preloader.parentNode) preloader.parentNode.removeChild(preloader);
+      }, 500);
+    };
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      if (pPct) pPct.textContent = "100%";
+      if (pFill) pFill.style.width = "100%";
+      pDone();
+    } else {
+      if (pFill) pFill.style.animation = "none"; // take over from the CSS fallback
+      var pStart = performance.now();
+      var pTick = function (now) {
+        var t = Math.min(1, (now - pStart) / 1000);
+        var p = Math.round(t * 100);
+        if (pPct) pPct.textContent = p + "%";
+        if (pFill) pFill.style.width = p + "%";
+        if (t < 1) requestAnimationFrame(pTick);
+        else setTimeout(pDone, 130);
+      };
+      requestAnimationFrame(pTick);
+    }
+  }
+
   var header = document.querySelector(".site-header");
   var toggle = document.querySelector(".nav-toggle");
   var productBtn = document.querySelector(".nav-product");
@@ -63,13 +93,24 @@
     }
   });
 
-  /* --- Products accordion --- */
+  /* --- Products accordion (one open at a time) --- */
   var accHeaders = document.querySelectorAll(".acc-header");
   accHeaders.forEach(function (header) {
     header.addEventListener("click", function () {
       var item = header.closest(".acc-item");
-      var isOpen = item.classList.toggle("is-open");
-      header.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      var accordion = item.closest(".accordion") || document;
+      var willOpen = !item.classList.contains("is-open");
+      // close every item in this accordion first
+      accordion.querySelectorAll(".acc-item.is-open").forEach(function (other) {
+        other.classList.remove("is-open");
+        var h = other.querySelector(".acc-header");
+        if (h) h.setAttribute("aria-expanded", "false");
+      });
+      // then open the clicked one (unless it was the one just closed)
+      if (willOpen) {
+        item.classList.add("is-open");
+        header.setAttribute("aria-expanded", "true");
+      }
     });
   });
 

@@ -2518,3 +2518,60 @@ button { font: inherit; }
    rule that sets display (e.g. .au-grid{display:grid}) silently beats it and
    leaves "hidden" tab panels on screen. Make it stick site-wide. */
 [hidden] { display: none !important; }
+
+/* ============================================================
+   Page preloader — floating logo + 0→100% progress
+   ============================================================ */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cream);
+  transition: opacity .45s var(--ease), visibility .45s var(--ease);
+  /* no-JS safety: hide even if the script never runs */
+  animation: preloader-safety .4s var(--ease) 1.8s forwards;
+}
+.preloader.is-done { opacity: 0; visibility: hidden; pointer-events: none; }
+.preloader-inner { display: flex; flex-direction: column; align-items: center; }
+.preloader-logo {
+  width: 82px;
+  height: auto;
+  animation: preloader-float 1.5s ease-in-out infinite;
+}
+.preloader-bar {
+  margin-top: 30px;
+  width: 200px;
+  height: 3px;
+  background: rgba(92, 26, 14, 0.14);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.preloader-fill {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--maroon);
+  border-radius: 999px;
+  /* no-JS fallback fill; JS cancels this and drives the width itself */
+  animation: preloader-progress 1s linear forwards;
+}
+.preloader-pct {
+  margin-top: 14px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .05em;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+@keyframes preloader-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes preloader-progress { from { width: 0; } to { width: 100%; } }
+@keyframes preloader-safety { to { opacity: 0; visibility: hidden; } }
+@media (prefers-reduced-motion: reduce) {
+  .preloader-logo { animation: none; }
+}
