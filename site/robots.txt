@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://african-languages-lab-ai.github.io/mansa-site/sitemap.xml
