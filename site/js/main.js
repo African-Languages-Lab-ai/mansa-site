@@ -30,6 +30,29 @@
     }
   }
 
+  /* --- Smooth transition when navigating to another page on this site --- */
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reduceMotion) {
+    document.addEventListener("click", function (e) {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      var a = e.target.closest ? e.target.closest("a[href]") : null;
+      if (!a || a.target === "_blank" || a.hasAttribute("download") || a.getAttribute("rel") === "external") return;
+      var href = a.getAttribute("href");
+      if (!href || href.charAt(0) === "#" || /^(mailto:|tel:|javascript:)/i.test(href)) return;
+      var url;
+      try { url = new URL(href, location.href); } catch (_) { return; }
+      if (url.origin !== location.origin) return;                 // external (e.g. the app) — navigate normally
+      if (url.pathname === location.pathname && url.hash) return; // in-page anchor
+      e.preventDefault();
+      document.body.classList.add("is-leaving");
+      setTimeout(function () { window.location.href = url.href; }, 300);
+    });
+    // Restore visibility if the page comes back from the bfcache (back/forward).
+    window.addEventListener("pageshow", function (e) {
+      if (e.persisted) document.body.classList.remove("is-leaving");
+    });
+  }
+
   var header = document.querySelector(".site-header");
   var toggle = document.querySelector(".nav-toggle");
   var productBtn = document.querySelector(".nav-product");

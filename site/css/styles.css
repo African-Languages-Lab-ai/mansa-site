@@ -2575,3 +2575,25 @@ button { font: inherit; }
 @media (prefers-reduced-motion: reduce) {
   .preloader-logo { animation: none; }
 }
+
+/* ============================================================
+   Smooth page transitions (internal navigation)
+   ============================================================ */
+main {
+  animation: page-enter .5s var(--ease) both;
+}
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+/* while navigating away to another internal page, glide the current one out */
+body.is-leaving main {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity .3s var(--ease), transform .3s var(--ease);
+  animation: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  main { animation: none; }
+  body.is-leaving main { transition: none; opacity: 1; transform: none; }
+}
